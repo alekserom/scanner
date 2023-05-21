@@ -26,7 +26,7 @@ class ServiceHandler(BaseHTTPRequestHandler):
         num_hosts = 0
         target = ''
         method = ''
-        headers = json
+        headers = ''
 
         payload = json.loads(temp)
         for key in payload:
@@ -79,6 +79,6 @@ class ServiceHandler(BaseHTTPRequestHandler):
 
 
 
-server = HTTPServer(('127.0.0.1', 5000), ServiceHandler)
+server = HTTPServer(('0.0.0.0', 5000), ServiceHandler)
 server.serve_forever()
 
